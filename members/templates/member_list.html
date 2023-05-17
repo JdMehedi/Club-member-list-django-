@@ -1,0 +1,50 @@
+{% extends "master.html" %} {% block title %} My Tennis Club - List of all
+members {% endblock %} {% block content %}
+<style>
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    padding: 4px;
+    align: center;
+  }
+  member {
+    align: center;
+  }
+  home {
+    margin: 10px;
+  }
+</style>
+<h1>Members List</h1>
+<div>
+  <div>
+    <p class="home"><a href="/">HOME</a></p>
+  </div>
+</div>
+<ul>
+  <table>
+    {% for x in members %}
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Join Date</th>
+    </tr>
+    <tr>
+      <td>{{ x.firstName }}</td>
+      <td>{{ x.lastName }}</td>
+      <td>{{ x.email }}</td>
+      <td>{{ x.phone }}</td>
+      <td>{{ x.join_date }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</ul>
+
+<ul>
+  {% for x in members %}
+  <li><a href="details/{{ x.id }}">{{ x.firstName }} {{ x.lastName }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

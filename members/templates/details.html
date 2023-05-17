@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+Club - Detals of a members
+{% endblock %}
+
+{% block content %}
+
+  <style>
+    h3, p {
+      border:1px solid black;
+      padding:4px;
+      align:center
+    }
+    </style>
+  
+  <h3>Full Name :{{ members.firstName }} {{ members.lastName }}</h3>
+  
+  <p>Email: {{ members.email }}</p>
+  <p>Phone: {{ members.phone }}</p>
+  <p>Member since: {{ members.joined_date }}</p>
+  
+  <button><a href="/members">Back to the members list</a></button>
+
+  {% endblock %}
